@@ -17,10 +17,7 @@ export const routes: Routes = [
   },
   {
     path: '404',
-    component: P404Component,
-    data: {
-      title: 'Page 404'
-    }
+    loadChildren: () => import('./views/login/login.module').then(m => m.LoginModule)
   },
   {
     path: '500',
@@ -31,7 +28,10 @@ export const routes: Routes = [
   },
   {
     path: 'login',
-    loadChildren: () => import('./views/login/login.module').then(m => m.LoginModule)
+    component: LoginComponent,
+    data: {
+      title: 'Login Page'
+    }
   },
   {
     path: 'register',

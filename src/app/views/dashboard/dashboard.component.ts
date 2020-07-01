@@ -3,11 +3,10 @@ import { getStyle, hexToRgba } from '@coreui/coreui/dist/js/coreui-utilities';
 import { CustomTooltips } from '@coreui/coreui-plugin-chartjs-custom-tooltips';
 
 @Component({
-  templateUrl: 'welcome.html'
+  templateUrl: 'dashboard.component.html'
 })
 export class DashboardComponent implements OnInit {
-  name: string;
-  email: string;
+
   radioModel: string = 'Month';
 
   // lineChart1
@@ -377,9 +376,8 @@ export class DashboardComponent implements OnInit {
   public random(min: number, max: number) {
     return Math.floor(Math.random() * (max - min + 1) + min);
   }
+
   ngOnInit(): void {
-    this.name = sessionStorage.getItem('FULL_NAME');
-    this.email = sessionStorage.getItem('EMAIL');
     // generate random values for mainChart
     for (let i = 0; i <= this.mainChartElements; i++) {
       this.mainChartData1.push(this.random(50, 200));

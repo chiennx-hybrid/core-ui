@@ -9,6 +9,10 @@ import { DefaultLayoutComponent } from './containers';
 import { P404Component } from './views/error/404.component';
 import { P500Component } from './views/error/500.component';
 import { RegisterComponent } from './views/register/register.component';
+
+const APP_CONTAINERS = [
+  DefaultLayoutComponent
+];
 import {
   AppAsideModule,
   AppBreadcrumbModule,
@@ -16,19 +20,11 @@ import {
   AppFooterModule,
   AppSidebarModule,
 } from '@coreui/angular';
-
-// Import routing module
 import { AppRoutingModule } from './app.routing';
-
-// Import 3rd party components
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { TabsModule } from 'ngx-bootstrap/tabs';
 import { ChartsModule } from 'ng2-charts';
-
-
-const APP_CONTAINERS = [
-  DefaultLayoutComponent
-];
+import { LoginModule } from './views/login/login.module';
 
 @NgModule({
   imports: [
@@ -43,7 +39,8 @@ const APP_CONTAINERS = [
     PerfectScrollbarModule,
     BsDropdownModule.forRoot(),
     TabsModule.forRoot(),
-    ChartsModule
+    ChartsModule,
+    LoginModule
   ],
   declarations: [
     AppComponent,
