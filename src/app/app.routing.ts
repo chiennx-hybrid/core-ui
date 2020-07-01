@@ -31,10 +31,7 @@ export const routes: Routes = [
   },
   {
     path: 'login',
-    component: LoginComponent,
-    data: {
-      title: 'Login Page'
-    }
+    loadChildren: () => import('./views/login/login.module').then(m => m.LoginModule)
   },
   {
     path: 'register',
